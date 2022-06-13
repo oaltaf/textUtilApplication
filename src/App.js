@@ -4,7 +4,7 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import propTypes from "prop-types";
 import TextForm from "./components/TextForm";
-// import MenuButtons from "./components/MenuButtons";
+import MenuButtons from "./components/MenuButtons";
 import React, { useState } from "react";
 import RegisterForm from "./components/RegisterForm";
 // import About from "./components/About";
@@ -15,7 +15,8 @@ function App() {
   return (
     <>
       <Navbar mode={mode}></Navbar>
-      {/* <MenuButtons></MenuButtons> */}
+
+      <MenuButtons></MenuButtons>
 
       <RegisterForm></RegisterForm>
       {/* <Navbar
