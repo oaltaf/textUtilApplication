@@ -28,6 +28,10 @@
   color: #61dafb;
 }
 
+.blank{
+  color: red;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +39,30 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.content {
+  position: relative;
+  text-align: right;
+}
+#right-panel-link {
+  position: absolute;
+  top: 80px;
+  right: 50px;
+}
+
+
+.container{
+  position: relative;
+  top: 80px;
+  right: 50px;
+  margin-left: 150px;
+  
+}
+
+.container1{
+  position: relative;
+  top: 0px;
+  right: 50px;
+  margin-left: 150px;
 }
