@@ -49,7 +49,7 @@ export default function Dropdown() {
           <option value="selectDreamCar">Select your action item</option>
           <option value="table">User Table</option>
           <option value="fileupload">Upload a File</option>
-          <option value="checkboxes">Checkboxes</option>
+          <option value="checkboxes">Test Checkboxes</option>
         </select>
       </div>
       {tableContentVisible && <Table />}
