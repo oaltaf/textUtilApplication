@@ -10,7 +10,7 @@ import LoginForm from "./components/LoginForm";
 import React, { useState } from "react";
 import RegisterForm from "./components/RegisterForm";
 import About from "./components/About";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AddRestaurant from "./components/AddRestaurant";
 import Dropdown from "./components/Dropdown";
 

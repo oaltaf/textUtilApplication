@@ -1,7 +1,6 @@
 import React from "react";
-import LoginForm from "./LoginForm";
+
 import { Link } from "react-router-dom";
-import RegisterForm from "./RegisterForm";
 
 // const callAddRestFunc = () => {
 //   console.log("Add Rest was clicked");

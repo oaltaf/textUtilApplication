@@ -137,6 +137,7 @@ export default function RegisterForm() {
                             <a
                               href="https://termly.io/resources/templates/terms-and-conditions-template/"
                               target="_blank"
+                              rel="noopener noreferrer"
                             >
                               Terms of service
                             </a>
@@ -158,7 +159,7 @@ export default function RegisterForm() {
                       <img
                         src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
                         className="img-fluid"
-                        alt="Sample image"
+                        alt="test"
                       />
                     </div>
                   </div>

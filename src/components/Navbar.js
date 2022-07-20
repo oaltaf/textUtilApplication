@@ -74,6 +74,7 @@ export default function Navbar(props) {
           className="form-check-input"
           type="checkbox"
           role="switch"
+          aria-checked={false}
           id="flexSwitchCheckDefault"
           onClick={props.toggleMode}
         />
