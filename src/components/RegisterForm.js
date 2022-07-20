@@ -1,6 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function RegisterForm() {
+  //   const signUp = () => {
+  //     const [username, setUserName] = useState("");
+  //     const [email, setEmail] = useState("");
+  //     const [password, setPassword] = useState("");
+  //     const [rpassword, setRpassword] = useState("");
+  //     const collectData = () => {
+  //       console.warn(username, email, password, rpassword);
+  //     };
+  //   };
+
+  const [user, setUser] = useState({
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
+
+  let name, value;
+
+  const handleUser = (e) => {
+    name = e.target.name;
+    value = e.target.value;
+
+    setUser({ ...user, [name]: value });
+  };
+
   return (
     <>
       <section className="vh-100">
@@ -22,7 +48,10 @@ export default function RegisterForm() {
                             <input
                               type="text"
                               id="form3Example1c"
+                              name="name"
                               className="form-control"
+                              value={user.name}
+                              onChange={handleUser}
                             />
                             <label
                               className="form-label"
@@ -39,7 +68,10 @@ export default function RegisterForm() {
                             <input
                               type="email"
                               id="form3Example3c"
+                              name="email"
                               className="form-control"
+                              value={user.email}
+                              onChange={handleUser}
                             />
                             <label
                               className="form-label"
@@ -55,8 +87,11 @@ export default function RegisterForm() {
                           <div className="form-outline flex-fill mb-0">
                             <input
                               type="password"
+                              name="password"
                               id="form3Example4c"
                               className="form-control"
+                              value={user.password}
+                              onChange={handleUser}
                             />
                             <label
                               className="form-label"
@@ -72,8 +107,11 @@ export default function RegisterForm() {
                           <div className="form-outline flex-fill mb-0">
                             <input
                               type="password"
+                              name="cpassword"
                               id="form3Example4cd"
                               className="form-control"
+                              value={user.confirmPassword}
+                              onChange={handleUser}
                             />
                             <label
                               className="form-label"
@@ -96,7 +134,12 @@ export default function RegisterForm() {
                             htmlFor="form2Example3"
                           >
                             I agree all statements in{" "}
-                            <a href="#!">Terms of service</a>
+                            <a
+                              href="https://termly.io/resources/templates/terms-and-conditions-template/"
+                              target="_blank"
+                            >
+                              Terms of service
+                            </a>
                           </label>
                         </div>
 
@@ -104,6 +147,7 @@ export default function RegisterForm() {
                           <button
                             type="button"
                             className="btn btn-primary btn-lg"
+                            onClick={handleUser}
                           >
                             Register
                           </button>

@@ -5,31 +5,85 @@ import Navbar from "./components/Navbar";
 import propTypes from "prop-types";
 import TextForm from "./components/TextForm";
 import MenuButtons from "./components/MenuButtons";
+
+import LoginForm from "./components/LoginForm";
 import React, { useState } from "react";
 import RegisterForm from "./components/RegisterForm";
-// import About from "./components/About";
+import About from "./components/About";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import AddRestaurant from "./components/AddRestaurant";
+import Dropdown from "./components/Dropdown";
 
 function App() {
-  const [mode, setMode] = useState(false); // Whether dark mode is enable or not
+  const [mode, setMode] = useState("light"); // Whether dark mode is enable or not
+
+  const toggleMode = () => {
+    if (mode === "light") {
+      setMode("dark");
+      document.body.style.backgroundColor = "black";
+    } else {
+      setMode("light");
+      document.body.style.backgroundColor = "white";
+    }
+  };
+
+  // <div className="form-check form-switch">
+  //   <input
+  //     className="form-check-input"
+  //     type="checkbox"
+  //     role="switch"
+  //     id="flexSwitchCheckDefault"
+  //   />
+  //   <label className="form-check-label" htmlFor="flexSwitchCheckDefault">
+  //     Enable Dark Mode
+  //   </label>
+  // </div>;
 
   return (
     <>
-      <Navbar mode={mode}></Navbar>
+      {/* <Navbar mode={mode} toggleMode={toggleMode}></Navbar> */}
 
-      <MenuButtons></MenuButtons>
+      {/* <MenuButtons></MenuButtons> */}
+      {
+        <BrowserRouter>
+          <Navbar mode={mode} toggleMode={toggleMode}></Navbar>
 
-      <RegisterForm></RegisterForm>
-      {/* <Navbar
-        title="Restaurants"
-        homeTitle="Home"
-        aboutTitle="About"
-        searchText="Search"
-      ></Navbar> */}
+          <MenuButtons></MenuButtons>
 
-      <div className="container my-6">
-        {/* <TextForm textArea="Enter the text here"></TextForm> */}
-        {/* <About></About> */}
-      </div>
+          {/* {<RegisterForm></RegisterForm>} */}
+          {/* {
+            <Navbar
+              title="Restaurants"
+              homeTitle="Home"
+              aboutTitle="About"
+              searchText="Search"
+            ></Navbar>
+          } */}
+
+          <div
+            className="container my-6"
+            style={{ backgroundColor: "darkslategrey" }}
+          >
+            {/* { A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. } */}
+            <Routes>
+              <Route path="/about" element={<About />} />
+              {/* {
+                <Route path="/users">
+                  <Users />
+                </Route>
+              } */}
+              <Route path="/" element={<TextForm />} />
+              <Route path="/dropdown" element={<Dropdown></Dropdown>}></Route>;
+              <Route path="/login" element={<LoginForm />}></Route>
+              <Route path="/register" element={<RegisterForm />}></Route>
+              <Route path="/restaurant" element={<AddRestaurant />}></Route>
+              {/* { <TextForm/> textArea=`Enter the text here`/> } */}
+              {/* {<About></About>} */}
+            </Routes>
+          </div>
+        </BrowserRouter>
+      }
     </>
   );
 }
@@ -48,6 +102,6 @@ Navbar.defaultProps = {
   searchText: "Search",
 };
 
-TextForm.defaultProps = { heading: "Enter the text to Analyze" };
+// TextForm.defaultProps = { heading: "Enter the text to Analyze" };
 
 export default App;

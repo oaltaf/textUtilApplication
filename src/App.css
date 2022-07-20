@@ -55,8 +55,9 @@
 .container{
   position: relative;
   top: 80px;
-  right: 50px;
-  margin-left: 150px;
+  right: 100px;
+  margin-left: 112px;
+  background-color: dimgray;
   
 }
 
@@ -65,4 +66,8 @@
   top: 0px;
   right: 50px;
   margin-left: 150px;
+}
+
+.btn{
+  position: relative;
 }
