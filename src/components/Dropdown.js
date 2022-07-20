@@ -34,7 +34,7 @@ export default function Dropdown() {
   const renderResult = () => {
     let result;
     car === "selectDreamCar"
-      ? (result = "select your dream car")
+      ? (result = "select your action item")
       : (result = makeFirstLetterCapital(car));
     return result;
   };
