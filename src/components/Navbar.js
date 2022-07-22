@@ -51,8 +51,19 @@ export default function Navbar(props) {
                 {props.aboutTitle}
               </Link>
             </li>
+            <li className="nav-item">
+              <Link
+                className={`nav-link active text-${
+                  props.mode === "light" ? "dark" : "light"
+                }`}
+                aria-current="page"
+                to="/help"
+              >
+                {props.helpTitle}
+              </Link>
+            </li>
           </ul>
-          <form className="d-flex" role="search">
+          {/* <form className="d-flex" role="search">
             <input
               className="form-control me-2"
               type="search"
@@ -62,7 +73,7 @@ export default function Navbar(props) {
             <button className="btn btn-outline-success" type="submit">
               {props.searchText}
             </button>
-          </form>
+          </form> */}
         </div>
       </div>
       <div

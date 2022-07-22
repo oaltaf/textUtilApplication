@@ -13,6 +13,7 @@ import About from "./components/About";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AddRestaurant from "./components/AddRestaurant";
 import Dropdown from "./components/Dropdown";
+import Help from "./components/Help";
 
 function App() {
   const [mode, setMode] = useState("light"); // Whether dark mode is enable or not
@@ -68,6 +69,7 @@ function App() {
             renders the first one that matches the current URL. } */}
             <Routes>
               <Route path="/about" element={<About />} />
+              <Route path="/help" element={<Help />} />
               {/* {
                 <Route path="/users">
                   <Users />
@@ -93,6 +95,7 @@ Navbar.propTypes = {
   aboutTitle: propTypes.string,
   homeTitle: propTypes.string,
   searchText: propTypes.string,
+  helpTitle: propTypes.string,
 };
 
 Navbar.defaultProps = {
@@ -100,6 +103,7 @@ Navbar.defaultProps = {
   aboutTitle: "About Us",
   homeTitle: "Home",
   searchText: "Search",
+  helpTitle: "Help",
 };
 
 // TextForm.defaultProps = { heading: "Enter the text to Analyze" };
